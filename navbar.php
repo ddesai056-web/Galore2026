@@ -6,11 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- jQuery (optional, not required by Bootstrap 5 but kept safe) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
@@ -37,25 +40,12 @@
       box-shadow: 0 10px 25px rgba(220, 53, 69, 0.45);
     }
 
-    @media (max-width: 768px) {
-
-      .about-grid,
-      .about-grid.reverse {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
     /* ===== HEADER LOGOS ===== */
     .header-box {
       background: #ffffff;
       border-radius: 0 0 20px 20px;
       padding: 8px 0;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .logo-col {
-      padding: 0;
     }
 
     .header-logo {
@@ -104,7 +94,6 @@
 
     /* ===== DROPDOWN ===== */
     .dropdown-menu {
-      border-radius: 0 !important;
       border-radius: 12px;
       border: none;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
@@ -115,14 +104,26 @@
     .dropdown-item {
       padding: 10px 18px;
       font-weight: 500;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .dropdown-item:hover {
-      background: #dc3545;
-      color: #fff;
+    .dropdown-item:hover,
+    .dropdown-item:focus,
+    .dropdown-item:active {
+      background-color: #dc3545 !important;
+      color: #fff !important;
     }
 
-    /* REMOVE DROPDOWN ARROW */
+    /* When Bootstrap adds active class */
+    .dropdown-item.active,
+    .dropdown-item.active:hover,
+    .dropdown-item.active:focus {
+      background-color: #dc3545 !important;
+      color: #fff !important;
+    }
+
+
+    /* Remove default arrow */
     .dropdown-toggle::after {
       display: none !important;
     }
@@ -131,25 +132,9 @@
       color: red;
       margin-left: 4px;
       font-size: 0.8em;
-      vertical-align: middle;
     }
 
-    /* Dropdown item hover and active/focus state */
-    .dropdown-item:hover,
-    .dropdown-item:focus,
-    .dropdown-item:active {
-      background-color: #dc3545 !important;
-      /* red background */
-      color: #fff !important;
-      /* white text */
-    }
-
-    .dropdown-item {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-
-    /* HOVER DROPDOWN DESKTOP */
+    /* ===== HOVER DROPDOWN (DESKTOP ONLY) ===== */
     @media (min-width: 992px) {
       .navbar .dropdown:hover>.dropdown-menu {
         display: block;
@@ -198,7 +183,7 @@
       padding: 6px 18px;
     }
 
-    /* RIGHT SIDE */
+    /* ===== RIGHT SIDE ===== */
     .navbar-actions {
       margin-left: auto;
       gap: 15px;
@@ -209,7 +194,6 @@
       .navbar-actions {
         flex-direction: column;
         margin-top: 15px;
-        gap: 10px;
       }
 
       .search-form input {
@@ -220,22 +204,6 @@
         text-align: center;
       }
     }
-
-    /* ===== FIX DROPDOWN RESPONSIVENESS ===== */
-
-    /* Mobile: allow Bootstrap click dropdown */
-    @media (max-width: 991px) {
-      .navbar .dropdown-menu {
-        display: none;
-        position: static;
-        box-shadow: none;
-        animation: none;
-      }
-
-      .navbar .dropdown.show .dropdown-menu {
-        display: block;
-      }
-    }
   </style>
 </head>
 
@@ -244,16 +212,16 @@
   <!-- ===== HEADER LOGOS ===== -->
   <div class="container-fluid header-box">
     <div class="row text-center align-items-center gx-1">
-      <div class="col-6 col-md-3 logo-col">
+      <div class="col-6 col-md-3">
         <img src="Website/galore_half1.jpg" class="img-fluid header-logo">
       </div>
-      <div class="col-6 col-md-3 logo-col">
+      <div class="col-6 col-md-3">
         <img src="Website/rku_logo.png" class="img-fluid header-logo">
       </div>
-      <div class="col-6 col-md-3 logo-col">
+      <div class="col-6 col-md-3">
         <img src="Website/galore_logo.png" class="img-fluid header-logo">
       </div>
-      <div class="col-6 col-md-3 logo-col">
+      <div class="col-6 col-md-3">
         <img src="Website/galore_half2.png" class="img-fluid header-logo">
       </div>
     </div>
@@ -271,11 +239,11 @@
 
         <!-- CENTER MENU -->
         <ul class="navbar-nav align-items-center main-menu mx-auto">
+
           <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
               Events <i class="bi bi-caret-down-fill"></i>
             </a>
             <ul class="dropdown-menu">
@@ -285,27 +253,25 @@
             </ul>
           </li>
 
-
           <li class="nav-item"><a class="nav-link" href="registration.php">Registration</a></li>
           <li class="nav-item"><a class="nav-link" href="schedual.php">Schedule</a></li>
           <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
           <li class="nav-item"><a class="nav-link" href="results.php">Results</a></li>
-
           <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="rules.php">Rules</a></li>
+
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
               More <i class="bi bi-caret-down-fill"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="co-cordinator.php">Cordinators</a></li>
-              <li><a class="dropdown-item" href="committee.php">Committee</a></li>
-              <li><a class="dropdown-item" href="rules.php">Rules</a></li>
+              <li><a class="dropdown-item" href="home.php">Student View</a></li>
+              <li><a class="dropdown-item" href="c_dashboard.php">coodinatore View</a></li>
+              <li><a class="dropdown-item" href="co_dashboard.php">Co-ordinators View</a></li>
             </ul>
           </li>
-
 
         </ul>
 
@@ -325,51 +291,6 @@
     </div>
   </nav>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <?php
-  $con = mysqli_connect("localhost", "root", "");
-  mysqli_select_db($con, "galore2026");
-
-
-  // $sql = "ALTER TABLE registration
-  //         ADD gender ENUM('Male','Female','Other') NOT NULL,
-  //         ADD school VARCHAR(50) NOT NULL,
-  //         ADD email VARCHAR(100) NOT NULL UNIQUE,
-  //         ADD profile_pic VARCHAR(255)";
-
-  // if(mysqli_query($con, $sql)){
-  //     echo "Columns added successfully";
-  // } else {
-  //     echo "Error: " . mysqli_error($con);
-  // }
-
-
-  // $registration_table = "CREATE TABLE registration (
-  //   id INT(11) AUTO_INCREMENT PRIMARY KEY,
-  //   full_name VARCHAR(100) NOT NULL,
-  //   enrollment_no VARCHAR(20) NOT NULL UNIQUE,
-  //   password VARCHAR(255) NOT NULL,
-  //   branch VARCHAR(50) NOT NULL,
-  //   semester INT(2) NOT NULL
-  // );";
-
-
-  // if (mysqli_query($con, $registration_table)) {
-  //    echo "Table Created";
-  // } else {
-  //    echo "Table not created: " . mysqli_error($con);
-  // }
-
-
-  //   $create_db = "Create database galore2026";
-  //  if( mysqli_query($con, $create_db)){
-  //   echo "Database Created";
-  //  }
-  //  else {
-  //   echo "Database not created";
-  //  }
-  ?>
 </body>
 
 </html>

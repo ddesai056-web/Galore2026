@@ -94,7 +94,7 @@
     /* ================= CAROUSEL ================= */
     #fastCarousel {
       width: 100%;
-      height: 60vh; /* half screen height */
+      height: 70vh; /* half screen height */
       overflow: hidden;
     }
 
@@ -110,9 +110,9 @@
       transition: transform 1s ease;
     }
 
-    #fastCarousel .carousel-item.active img {
+    /* #fastCarousel .carousel-item.active img {
       transform: scale(1.05);
-    }
+    } */
 
     /* ================= COORDINATOR AUTO SCROLL ================= */
     .coordinator-scroll-wrapper {
@@ -206,7 +206,7 @@
           <p>Football is a global phenomenon that unites cultures, emotions, and dreams. Teams demonstrate strategy,
             teamwork, and skill, while players showcase agility, endurance, and creativity. Football is more than a
             sport; it's a celebration of spirit, dedication, and joy of competition.</p>
-          <a href="#" class="download-btn" data-aos="flip-up">Football Event</a>
+          <a href="sports-indoor.php" class="download-btn" data-aos="flip-up">Football Event</a>
         </div>
       </div>
 
@@ -219,7 +219,7 @@
           <h3>Creative <span>Rangoli</span></h3>
           <p>Rangoli is a traditional art form that uses colors, patterns, and creativity. Participants explore intricate
             designs inspired by culture and festivals. Rangoli encourages focus, patience, and artistic expression.</p>
-          <a href="#" class="download-btn" data-aos="flip-up">Rangoli Event</a>
+          <a href="sports-indoor.php" class="download-btn" data-aos="flip-up">Rangoli Event</a>
         </div>
       </div>
 
@@ -232,7 +232,7 @@
           <h3>Energetic <span>Dance</span></h3>
           <p>Dance is a powerful form of expression combining rhythm, movement, and emotion. Performers showcase cultural
             traditions and creativity. Competitions celebrate talent, coordination, and joy.</p>
-          <a href="#" class="download-btn" data-aos="flip-up">Dance Event</a>
+          <a href="sports-indoor.php" class="download-btn" data-aos="flip-up">Dance Event</a>
         </div>
       </div>
 
@@ -246,7 +246,7 @@
           <p>Singing connects hearts through melody, pitch, and rhythm. Participants perform solos or group numbers,
             covering classical, contemporary, or regional music. Singing competitions encourage confidence, creativity, and
             a love for music.</p>
-          <a href="#" class="download-btn" data-aos="flip-up">Singing Event</a>
+          <a href="sports-indoor.php" class="download-btn" data-aos="flip-up">Singing Event</a>
         </div>
       </div>
 
@@ -259,7 +259,7 @@
           <h3>Strategic <span>Carrom</span></h3>
           <p>Carrom is a game of precision, strategy, and concentration. Players combine skill and focus to pocket coins
             and win. It encourages patience, logical thinking, and mental agility.</p>
-          <a href="#" class="download-btn" data-aos="flip-up">Carrom Event</a>
+          <a href="sports-indoor.php" class="download-btn" data-aos="flip-up">Carrom Event</a>
         </div>
       </div>
 
@@ -272,7 +272,7 @@
           <h3>Exciting <span>Cricket</span></h3>
           <p>Cricket combines skill, strategy, and teamwork. Matches are filled with suspense, outstanding plays, and
             moments of glory. Cricket inspires sportsmanship, excitement, and passion among students.</p>
-          <a href="#" class="download-btn" data-aos="flip-up">Cricket Event</a>
+          <a href="sports-indoor.php" class="download-btn" data-aos="flip-up">Cricket Event</a>
         </div>
       </div>
 
